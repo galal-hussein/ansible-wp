@@ -13,4 +13,8 @@ Wordpress + PHP-FPM + Nginx + MySQL
 # vagrant up
 ```
 
+```
+http://localhost:8080
+```
+
 Enjoy!
