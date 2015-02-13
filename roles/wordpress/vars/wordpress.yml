@@ -1,0 +1,14 @@
+DB_NAME: "wp"
+DB_USER: "wpuser"
+DB_PASSWORD: "wppass"
+DB_HOST: "localhost"
+
+AUTH_KEY: 'G&cW29Olhg6^!%1poqanh%xV{?JhT;!yVd>,k3]K}xN|,C~G#|Vupb3OdotZ<K'
+SECURE_AUTH_KEY: ':IFPN.011GFP0O+W^eR%Gg>BC[,iY%!jc7!GM*a:W@mmQsw4?;/>udW;RRY+cz7E'
+LOGGED_IN_KEY: 'db(^q.9W0u7N0^il2w;8bwlWKFLjF<j^_1fYEv_fhz#HVUVM]M6rcmu|x;K%Q7(o'
+NONCE_KEY: 'i+ff@/x%Js0lxw(!M1e@Qw//|{>}<9zgc4Vi3Y-mWTkuDv{Q7|1!&6DTcT,S9[%'
+AUTH_SALT: 'jX+ps9}sXRy-^;RI+Wh~e]6&NqDixr#p4r~b2QzYpI21YHYp+5e*;~@0S[6Y|{CW'
+SECURE_AUTH_SALT: '!]8X-dJDbK|g#NZfe/-y?F4q`j|v+63hs^IbO^(,*F&uUWB^jYhV=2HbmgPk(V!'
+LOGGED_IN_SALT: ')J Aw7:FBu~9X(o{0IWXiM[F>b~}E!p1^,CN: ZUMCLqJH@EphqM%N}A&5|ZnW5)'
+NONCE_SALT: '/K5hAuU+P|[J1{j}l-pNn3A+GsNu&]f&~K_y.X:LM5z1.MT%i8=0J4{P?B3M;|@^'
+

@@ -1,0 +1,10 @@
+---
+
+- name: Install Wordpress
+  hosts: all
+  sudo: yes
+  roles:
+         - { role: nginx, nginx_delete_default: True}
+         - mysql
+         - php-fpm
+         - wordpress

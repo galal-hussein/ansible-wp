@@ -1,0 +1,13 @@
+- name: Create Application Database
+  mysql_db:
+        name={{ DB_NAME }}
+        state=present
+
+- name: Create Application DB User
+  mysql_user:
+        name={{ DB_USER }}
+        password={{ DB_PASSWORD }}
+        host=%
+        priv={{ DB_NAME }}.*:ALL
+        state=present
+

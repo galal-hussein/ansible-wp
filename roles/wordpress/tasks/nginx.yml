@@ -1,0 +1,23 @@
+- name: Create Web Root
+  file:
+        dest={{ doc_root }}
+        mode=755
+        state=directory
+        owner=www-data
+        group=www-data
+
+- name: Add Sites Configuration
+  template:
+        src=wp.conf.j2
+        dest=/etc/nginx/sites-available/wp.conf
+        owner=root
+        group=root
+  register: addsite
+
+- name: Enable Sites Configuration
+  when: addsite|success
+  file:
+        src=/etc/nginx/sites-available/wp.conf
+        dest=/etc/nginx/sites-enabled/wp.conf state=link
+  notify:
+  - Reload Nginx

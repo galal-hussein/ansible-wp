@@ -1,0 +1,32 @@
+---
+- include: mysql.yml
+- include: nginx.yml
+
+- name: Download Wordpress
+  get_url: 
+        url=https://wordpress.org/wordpress-{{ wp_version }}.tar.gz
+        dest=/tmp/wordpress-{{ wp_version }}.tar.gz
+        
+- name: Unarchive Wordpress Site
+  command:
+        chdir={{ doc_root }}
+        /bin/tar xzf /tmp/wordpress-{{ wp_version }}.tar.gz --strip 1
+        creates={{ doc_root }}/wp-config-sample.php
+  register: decompresswp
+
+
+- name: Change ownership to www-data
+  file: 
+        path={{ doc_root }}
+        owner=www-data
+        group=www-data 
+        state=directory     
+        recurse=yes
+
+- name: Configure Wordpress
+  when: decompresswp | success
+  template: 
+        src=wp-config.php.j2
+        dest={{ doc_root }}/wp-config.php
+        owner=www-data
+        group=www-data

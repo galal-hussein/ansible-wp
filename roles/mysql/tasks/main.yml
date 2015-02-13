@@ -1,0 +1,17 @@
+---
+
+- name: Install MySQL Server
+  apt: 
+        name={{ item }}
+        state=installed
+  with_items:
+        - mysql-server-{{ mysql_version }}
+        - mysql-client-{{ mysql_version }}
+        - python-mysqldb
+  register: mysql_installed
+
+- name: Copy the my.cnf file 
+  template: src=my.cnf.j2 dest=/etc/mysql/my.cnf
+  when: mysql_installed | success
+  notify:
+   - Restart MySQL

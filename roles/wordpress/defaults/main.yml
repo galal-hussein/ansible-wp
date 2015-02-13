@@ -1,0 +1,17 @@
+doc_root: "/var/www/wp"
+wp_version: "4.1"
+
+DB_NAME: "wp"
+DB_USER: "wpuser"
+DB_PASSWORD: "wppass"
+DB_HOST: "localhost"
+
+AUTH_KEY: ""
+SECURE_AUTH_KEY: ""
+LOGGED_IN_KEY: ""
+NONCE_KEY: ""
+AUTH_SALT: ""
+SECURE_AUTH_SALT: ""
+LOGGED_IN_SALT: ""
+NONCE_SALT: ""
+
